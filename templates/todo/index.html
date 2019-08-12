@@ -16,8 +16,12 @@
 	<br>
 
 	<div ng-repeat="todo in todoList">
-        <span ng-bind="todo.todoText"></span>
+        <input type="checkbox" ng-model="todo.done"><span ng-bind="todo.todoText"></span>
     </div>
+
+    <p> 
+    	<button ng-click="remove()">Done</button>
+    </p>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 
