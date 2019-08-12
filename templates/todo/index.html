@@ -2,12 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>To-DO List</title>
+	<title>To-Do List</title>
 
 	{% load static %}
+	<link rel="stylesheet" href=" {% static 'css/todo.css' %} ">
 </head>
 <body ng-app="toDo" ng-controller="toDoController">
-	<h1>To-Do List for Nisarg</h1>
+	<h1 class="intro">To-Do List for Nisarg</h1>
 
 	<form ng-submit="todoAdd()">
 		<input type="text" ng-model="todoInput" placeholder="Add a new to do!">
@@ -16,7 +17,7 @@
 	<br>
 
 	<div ng-repeat="todo in todoList">
-        <input type="checkbox" ng-model="todo.done"><span ng-bind="todo.todoText"></span>
+        <input type="checkbox" ng-model="todo.done"><span class="textitem" ng-bind="todo.todoText"></span>
     </div>
 
     <p> 
