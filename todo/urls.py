@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='todo/index.html')),
     url(r'^todo/api/$', views.ToDoListView.as_view()),
+    url(r'^todo/api/(?P<pk>[0-9]+)/$', views.ToDoDetailView.as_view()),
 ]
