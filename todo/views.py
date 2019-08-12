@@ -1,6 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+from todo.models import ToDo
+from todo.serializers import ToDoSerializer
+
 class ToDoListView(APIView):
-	def get(self, request):
-		return Response({'test': 'It worked!'})
+    def get(self, request):
+        todos = ToDo.objects.all()
+        serializer = ToDoSerializer(todos, many=True)
+
+        return Response(serializer.data)
